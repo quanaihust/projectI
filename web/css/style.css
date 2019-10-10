@@ -1,0 +1,57 @@
+/* header */
+.head-select {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.login {
+    display: inline-block;
+    font-size: 18px;
+    padding: 14px 16px;
+    font-weight: bold;
+}
+.header {
+    background-color: #007bff;
+}
+.head-selection {
+    margin-bottom: 0;
+}
+.head-select:hover, .login:hover {
+    border-bottom: 2px solid #fff;
+}
+.head-select:hover a, .login:hover a{
+    color:red;
+    text-decoration: none;
+}
+.head-select a, .login a{
+    color: #fff;
+}
+/* box search */
+.box-search {
+    padding: 30px 0px;
+    text-align: center;
+}
+.main {
+    background-color: beige;
+    height: 800px;
+}
+.box-search form {
+    margin-bottom: 0;
+}
+.input-key {
+    width: 49%;
+}
+.button-search {
+    width: 10%;
+}
+.button-search:hover {
+    background-color: aquamarine;
+}
+.title-site {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
