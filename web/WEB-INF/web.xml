@@ -11,4 +11,13 @@
         <servlet-name>myIndexJsp</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+    <filter-mapping>
+        <filter-name>jdbcFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>cookieFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

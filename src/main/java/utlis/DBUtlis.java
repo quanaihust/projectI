@@ -22,4 +22,19 @@ public class DBUtlis {
             }
         return null;
         }
+
+    public static UserAccount findUser(Connection conn, String userName) throws SQLException {
+        String sql = "SELECT * FROM `englishapp`.`user_account` " + "WHERE `userName` = ? ";
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        pstm.setString(1,userName);
+        ResultSet rs = pstm.executeQuery();
+        if(rs.next()){
+            String password = rs.getString("Password");
+            UserAccount user = new UserAccount();
+            user.setUserName(userName);
+            user.setPassword(password);
+            return user;
+        }
+        return null;
     }
+}
