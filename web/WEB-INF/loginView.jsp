@@ -6,25 +6,24 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all" >
-<link rel="stylesheet" href="js/bootstrap.js" type="text/css" media="all" >
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<%@ page import="control.LoginServlet" %>
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="header.jsp" %>
 <main>
     <div class="title-site">Đăng nhập</div>
     <div class="box-sign-in">
         <div class="container">
+            <p style="text-align: center">${errorString}</p>
             <form method="post" action="${pageContext.request.contextPath}/login">
                 <div class="sign-in">
                     <div class="title-box">Tên đăng nhập</div>
                     <span>
-                        <input type="text" name="userName" value="${user.userName}">
-                    </span>
+                            <input type="text" name="userName" value="${user.userName}">
+                        </span>
                 </div>
                 <div class="sign-in">
                     <div class="title-box">Mật khẩu</div>
@@ -38,9 +37,9 @@
                          <input type="checkbox" name="rememberMe" value="Y">
                     </span>
                 </div>
-                  <div class="button-box">
-                      <input type="submit" value="Đăng nhập">
-                  </div>
+                <div class="button-box">
+                    <input type="submit" value="Đăng nhập">
+                </div>
             </form>
         </div>
     </div>

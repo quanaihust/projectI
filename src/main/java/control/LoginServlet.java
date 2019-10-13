@@ -38,14 +38,15 @@ public class LoginServlet extends HttpServlet {
 
         if(userName == null || password == null || userName.length() == 0|| password.length() == 0 ){
             hasError = true;
-            errorString = "Sai ten dang nhap hoac mat khau";
+            errorString = "Sai tên đăng nhập hoặc mật khẩu";
+            doGet(request,response);
         } else {
             Connection conn = MyUtlis.getStoredConnection(request);
             try {
                 user = DBUtlis.findUser(conn, userName, password);
                 if(user == null){
                     hasError = true;
-                    errorString = "Sai ten dang nhap hoac mat khau";
+                    errorString = "Sai tên đăng nhập hoặc mật khẩu";
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
