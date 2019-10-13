@@ -38,8 +38,7 @@ public class LoginServlet extends HttpServlet {
 
         if(userName == null || password == null || userName.length() == 0|| password.length() == 0 ){
             hasError = true;
-            errorString = "Sai tên đăng nhập hoặc mật khẩu";
-            doGet(request,response);
+            errorString = "Sai tên đăng nhập hoặc mật khẩu"
         } else {
             Connection conn = MyUtlis.getStoredConnection(request);
             try {
