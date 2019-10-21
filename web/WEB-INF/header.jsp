@@ -6,19 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all" >
-<link rel="stylesheet" href="js/bootstrap.js" type="text/css" media="all" >
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" href="js/bootstrap.js" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<head></head>
+<body>
 <div class="header">
     <div class="container">
         <div class="row head-top">
             <div class="col-md-8">
                 <ul class="head-selection">
                     <li class="head-select">
-                        <a href="index.jsp">Tra cứu</a>
+                        <a href="home">Tra cứu</a>
                     </li>
                     <li class="head-select">
-                        <a href="#">Danh sách</a>
+                        <a href="myList">Danh sách</a>
                     </li>
                     <li class="head-select">
                         <a href="#">Thêm từ</a>
@@ -42,3 +44,5 @@
         </div>
     </div>
 </div>
+<main>
+

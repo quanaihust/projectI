@@ -1,8 +1,10 @@
 package filter;
 
+import connection.ConnectionUtlis;
 import connection.DBConn;
 import utlis.MyUtlis;
 
+import javax.security.sasl.SaslException;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -29,13 +31,17 @@ public class JDBCFilter implements Filter {
             System.out.println("Open Connection for:" + req.getServletPath());
             Connection conn = null;
             try {
-                conn = DBConn.getConnection();
+                conn = ConnectionUtlis.getConnection();
                 conn.setAutoCommit(false);
                 MyUtlis.storeConnection(servletRequest, conn);
                 filterChain.doFilter(servletRequest,servletResponse);
                 conn.commit();
             } catch (SQLException e) {
                 e.printStackTrace();
+                ConnectionUtlis.rollbackQuietly(conn);
+                throw new SaslException();
+            } finally {
+                ConnectionUtlis.closeQuietly(conn);
             }
 
         } else {

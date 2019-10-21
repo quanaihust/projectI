@@ -7,13 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="control.LoginServlet" %>
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
 <%@ include file="header.jsp" %>
-<main>
     <div class="title-site">Đăng nhập</div>
     <div class="box-sign-in">
         <div class="container">
@@ -43,5 +37,4 @@
             </form>
         </div>
     </div>
-</main>
-</body>
+    <%@ include file="footer.jsp"%>

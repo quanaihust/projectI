@@ -39,7 +39,6 @@ public class LoginServlet extends HttpServlet {
         if(userName == null || password == null || userName.length() == 0|| password.length() == 0 ){
             hasError = true;
             errorString = "Sai tên đăng nhập hoặc mật khẩu";
-            doGet(request,response);
         } else {
             Connection conn = MyUtlis.getStoredConnection(request);
             try {
@@ -70,7 +69,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 MyUtlis.deleteUserCookie(response);
             }
-            response.sendRedirect(request.getContextPath() + "/userinfo");
+            response.sendRedirect(request.getContextPath() + "/myList");
         }
     }
 }
